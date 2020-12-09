@@ -1,4 +1,5 @@
 #include "autoclicker.h"
+#include <Windows.h>
 
 int minDelay;
 int maxDelay;
@@ -42,29 +43,11 @@ int autoclicker::randomize()
 
 int autoclicker::titleChanger() // Yea i was bored so i did this, kinda looks cool in action
 {
-	system("title S");
-	Sleep(50);
-	system("title Sp");
-	Sleep(50);
-	system("title Spo");
-	Sleep(50);
-	system("title Spot");
-	Sleep(50);
-	system("title Spoti");
-	Sleep(50);
-	system("title Spotif");
-	Sleep(50);
-	system("title Spotify ");
-	Sleep(50);
-	system("title Spotify.");
-	Sleep(50);
-	system("title Spotify.e");
-	Sleep(50);
-	system("title Spotify.ex");
-	Sleep(50);
-	system("title Spotify.exe");
-	Sleep(50);
-
-
+    std::string str = "Spotify.exe";
+    for(int i = 0; i <= str.length(); i++){
+        std::string part = "title " + str.substr(0, i);
+        system(part.c_str());
+        Sleep(50);
+    }
 	return 0;
 }
