@@ -5,12 +5,12 @@
 #include <chrono>
 #include <random>
 #include <thread>
+#include <future>
 
 class autoclicker {
 public:
-	static int sendClicks();
-	static int randomize();
-	static int getDInput();
-
-	static int titleChanger();
+	static void sendClicks();
+	static void randomize();
+	static void getDInput();
+	static void titleChanger();
 };
